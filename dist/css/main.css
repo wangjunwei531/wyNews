@@ -1,0 +1,127 @@
+body{
+    font-size: 1.6rem;
+}
+html{
+    font-size: 62.5%;
+}
+@media all and (max-width: 480px){
+
+    .topCarouselImg{
+        height: 18rem;
+        width: 100%;
+    }
+}
+@media all and (min-width: 480px){
+    .topCarouselImg{
+        height: 24rem;
+        width: 100%;
+    }
+    /*.view-container{*/
+         /*width: 48rem;*/
+     /*}*/
+
+}
+.topCarousel{
+    position: relative;
+    width: 100%;
+
+}
+.topCarousel .slider-pager{
+
+    text-align: right;
+    padding-right: 2rem;
+    padding-top: .5rem;
+    /*height: 3rem;*/
+}
+
+.topCarousel .slider-pager-page{
+    width: .2rem;
+}
+.slider-pager .slider-pager-page {
+    opacity: .1;
+}
+.topCarousel .ion-record::before{
+    content: '•';
+    font-size: 1.8rem;
+    color: white;
+}
+.ion-record::before{
+    font-size: 0;
+}
+
+/*.topCarousel .ion-record{*/
+    /*position: relative;*/
+    /*bottom: -2rem;*/
+    /*right: 2rem;*/
+    /*display: block;*/
+    /*width: .5rem;*/
+    /*height: .5rem;*/
+    /*border-radius: 50%;*/
+    /*background-color: red;*/
+/*}*/
+.slideBottomDiv{
+    position: absolute;
+    padding-left: 1.5rem;
+    bottom: .6rem;
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    height: 3rem;
+    background-color: rgba(0,0,0,.3);
+    color: white;
+}
+.popup-buttons{
+    border-top: solid 1px #d1d3d6;
+    padding: 0;
+    min-height: 0;
+}
+
+.popup-container .popup{
+    width: 300px;
+    border-radius: 6px;
+}
+.button.button-dark.button-clear{
+    border-right: solid 1px #d1d3d6;
+}
+.news .news_header{
+    height: 4rem;
+}
+.news .news_list{
+    /*width: 1200px;*/
+    /*margin-top:4rem;*/
+    height: 4rem;
+    line-height: 4rem;
+    white-space: nowrap;
+}
+.news .news_list a{
+    color: black;
+    margin: 0 1rem;
+}
+
+.news .news_item{
+    margin-top: -1px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-bottom:.1rem solid lightgrey;
+}
+.news .news_item{
+
+    border-top: none;
+}
+
+.news .news_item img{
+    width: 10rem;
+    height: 8rem;
+    margin: 1rem;
+    flex-shrink: 0;
+
+}
+
+.news .news_item h3{
+    font-size: 1.8rem;
+    margin: 1rem;
+
+}
