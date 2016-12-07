@@ -21,7 +21,7 @@
             <ion-slide>
 
                 <mg-slide-box source-array="news.adsArray"></mg-slide-box>
-                <div class="news_item" ng-repeat="item in news.itemsArray">
+                <div class="news_item" ng-repeat="item in news.itemsArray" ng-click="news.joinDetail()">
                     <img ng-src="{{item.imgsrc}}" alt="">
                         <h3>{{item.title}}</h3>
                 </div>

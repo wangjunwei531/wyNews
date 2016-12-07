@@ -13,19 +13,25 @@ angular.module('myApp.news',[]).config(['$stateProvider','$urlRouterProvider',fu
     });
     $urlRouterProvider.otherwise('/tabs/news');
 
-}]).controller('newsController',['$scope','$ionicSlideBoxDelegate','HttpFactory',function ($scope,$ionicSlideBoxDelegate,HttpFactory) {
+}]).controller('newsController',['$scope','$state','$stateParams','$ionicSlideBoxDelegate','$ionicViewSwitcher','HttpFactory',function ($scope,$state,$stateParams,$ionicSlideBoxDelegate,$ionicViewSwitcher,HttpFactory) {
+    console.log('????');
+    console.log($stateParams);
     var index = 0;
     $scope.news = {
 
     };
     var url1 = 'http://c.m.163.com/nc/topicset/ios/subscribe/manage/listspecial.html';
     HttpFactory.getData(url1).then(function (result) {
-
         $scope.news.nameArray = result;
     });
-    // $scope.doMe = function () {
-    //     console.log(event);
-    // };
+
+    $scope.news.joinDetail = function () {
+
+        $state.go('newsDetail');
+        $ionicViewSwitcher.nextDirection("forward");
+    };
+
+
     var arr = [];
     $scope.news.dataRefresh = function () {
         var url = 'http://c.m.163.com/recommend/getSubDocPic?from=toutiao&prog=LMA1&open=&openpath=&fn=1&passport=&devId=%2BnrKMbpU9ZDPUOhb9gvookO3HKJkIOzrIg%2BI9FhrLRStCu%2B7ZneFbZ30i61TL9kY&offset=0&size=10&version=17.1&spever=false&net=wifi&lat=&lon=&ts=1480666192&sign=yseE2FNVWcJVjhvP48U1nPHyzZCKpBKh%2BaOhOE2d6GR48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=appstore';
@@ -43,6 +49,7 @@ angular.module('myApp.news',[]).config(['$stateProvider','$urlRouterProvider',fu
             index = 1;
         });
     };
+
     $scope.news.canSlide = function (val) {
         $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(val);
     };
@@ -57,11 +64,6 @@ angular.module('myApp.news',[]).config(['$stateProvider','$urlRouterProvider',fu
             }else {
                 arr = arr.concat(result);
             }
-            // if ( arr.length < 8 || arr.length > 130){
-            //     $scope.news.isShow = false;
-            // }else {
-            //     $scope.news.isShow = true;
-            // }
             $scope.news.itemsArray = arr;
             $scope.$broadcast('scroll.infiniteScrollComplete');
 
