@@ -14,5 +14,15 @@ angular.module('myApp.live',['ionic']).config(['$stateProvider','$urlRouterProvi
 
 
 }]).controller('liveController',['$scope',function ($scope) {
+    $scope.live = {
+
+    };
+    $scope.live.getPage = function (event) {
+        var list = angular.element(event.currentTarget).children();
+        angular.forEach(list,function (data,index) {
+            angular.element(data).removeAttr('class');
+        });
+        angular.element(event.target).addClass('active');
+    }
 
 }]);

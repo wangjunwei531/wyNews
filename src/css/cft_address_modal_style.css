@@ -1,0 +1,56 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+}
+div.modal-backdrop{
+    background:rgba(0,0,0,.2);
+}
+#address_modal{
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    min-height: inherit;
+}
+#address_modal .input-label{
+    padding-left: 20px;
+}
+#address_modal .ad_mainBox{
+    width: 100%;
+}
+#address_modal p{
+
+
+    font-size: 1.8rem;
+}
+#address_modal p i{
+    position: absolute;
+    right: 2rem;
+    font-size: 1.6rem;
+}
+
+#address_modal input::-webkit-input-placeholder{
+    font-size: 1.6rem;
+}
+#address_modal .cft_button{
+    width:100%;
+    height: 5rem;
+    background-color: #ED3745;
+    border: none;
+    outline: none;
+    margin-bottom: -0.1rem;
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 2rem;
+    box-shadow: 0 -0.1rem 2rem 0 gray;
+}
+#address_modal .last_btn_box{
+    padding: 2rem 0 0;
+}
+#address_modal .last_span{
+    margin-left: 2rem;
+}
+
+
+

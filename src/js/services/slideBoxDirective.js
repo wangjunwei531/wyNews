@@ -21,7 +21,7 @@ angular.module('cftApp.slideBox',[]).directive('mgSlideBox',[function () {
                         $scope.isShowSlideBox = false;
                         $timeout(function () {
                             $scope.isShowSlideBox = true;
-                        },10);
+                        });
                     }else {
                         $scope.isShowSlideBox = true;
                     }

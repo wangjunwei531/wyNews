@@ -13,6 +13,8 @@ angular.module('myApp.tabs',['ionic']).config(['$stateProvider','$urlRouterProvi
     });
 
 
-}]).controller('tabsController',['$scope',function ($scope) {
+}]).controller('tabsController',['$scope','$ionicModal','$timeout',function ($scope,$ionicModal,$timeout) {
+
+
 
 }]);

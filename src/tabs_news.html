@@ -1,8 +1,33 @@
 <ion-view view-title="news" class="news">
+    <ion-header-bar class="bar-assertive">
+        <a class="button button-clear" ui-sref="tabs.live">直播</a>
+
+        <h1 class="title" style="font-size: 2.5rem">网易</h1>
+        <a class="button button-clear" ng-click="news.goSearch()">搜</a>
+
+
+    </ion-header-bar>
     <div class="bar bar-subheader">
+        <div class="list_main">
+            <div class="list_ctr">
+                <span>切换栏目</span>
+                <div on-touch="news.textSame($event)" ng-click="news.textSame($event,news.text)" class="btn">{{news.text}}</div>
+
+            </div>
+
+            <div class="list_view">
+                <div class="list_content"></div>
+            </div>
+        </div>
+        <div class="s_left"></div>
+        <div class="s_right" ng-click="news.getList($event)">
+            <i class="icon ion-ios-plus-empty"></i>
+        </div>
         <ion-scroll class="news_header" direction="x" scrollbar-x="false">
-            <div class="news_list">
-                <a ng-repeat="name in news.nameArray">{{name.tname}}</a>
+
+            <div class="news_list"  ng-click="news.dataLoading($event)">
+
+                <a ng-repeat="name in news.nameArray">{{name}}</a>
             </div>
         </ion-scroll>
     </div>
@@ -20,48 +45,27 @@
 
             <ion-slide>
 
-                <mg-slide-box source-array="news.adsArray"></mg-slide-box>
-                <div class="news_item" ng-repeat="item in news.itemsArray" ng-click="news.joinDetail()">
-                    <img ng-src="{{item.imgsrc}}" alt="">
+                <mg-slide-box source-array="news.adsArray" ng-if="news.showAds"></mg-slide-box>
+                <div class="news_item" ng-repeat="item in news.itemsArray" ng-click="news.joinDetail(item)">
+                    <div class="news_sItem" ng-if="item.imgnewextra">
                         <h3>{{item.title}}</h3>
-                </div>
+                        <div class="img_list">
+                            <img ng-src="{{item.imgsrc}}">
+                            <img ng-src="{{item.imgnewextra[0].imgsrc}}">
+                            <img ng-src="{{item.imgnewextra[1].imgsrc}}">
+                        </div>
 
-            </ion-slide>
-            <ion-slide>
-                <div on-tap="doMe()">
-                    <mg-slide-box source-array="news.adsArray"></mg-slide-box>
-                    <ion-list>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                        <ion-item>1</ion-item>
-                    </ion-list>
+                    </div>
+                    <div ng-if="!item.imgnewextra" class="news_lItem">
+                        <img ng-src="{{item.imgsrc}}" alt="">
+                        <h3>{{item.title}}</h3>
+                    </div>
+
                 </div>
 
 
-
-
-
             </ion-slide>
-            <ion-slide>
 
-
-
-            </ion-slide>
-            <ion-slide>
-
-
-            </ion-slide>
         </ion-slide-box>
         <ion-infinite-scroll distance="1%" immediate-check="true" spinner="lines" on-infinite="news.dataLoading()"></ion-infinite-scroll>
     </ion-content>

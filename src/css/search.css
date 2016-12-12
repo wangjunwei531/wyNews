@@ -1,0 +1,33 @@
+.search .header{
+    background: rgba(230,230,230,.3);
+}
+.search .in_search{
+    display: inline-block;
+}
+.search .in_search input{
+    width: 35rem;
+    height: 3rem;
+    border: 1px solid lightgrey;
+    border-radius:1.5rem ;
+    margin-top:2px;
+    position: relative;
+    padding-left: 40%;
+    transition: all .3s;
+}
+.search .in_search i{
+    position: absolute;
+    font-size: 2rem;
+    font-weight: 100;
+    top:1.2rem;
+    left: 28%;
+    transition: all .3s;
+}
+
+.search .active input{
+    transition: all .3s;
+    padding-left: 3rem;
+}
+.search .active i{
+    left: 1rem;
+
+}

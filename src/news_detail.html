@@ -1,4 +1,11 @@
 <ion-view view-title="mewsDetail">
-    <h1>newsDetail</h1>
+    <ion-header-bar>
+        <button class="button button-outline button-dark icon ion-ios-arrow-left" style="border-radius: 50%;width: 32px;height: 32px;" ng-click="newsDetail.goBack()"></button>
+    </ion-header-bar>
+    <ion-content padding="true" scroll="true" has-bouncing="true" >
+        <!--<h3>{{newsDetail.title}}</h3>-->
+        <div ng-bind-html="newsDetail.data"  class="newsDetail"></div>
+    </ion-content>
+
     <!--<div ng-bind-template=""></div>-->
 </ion-view>
